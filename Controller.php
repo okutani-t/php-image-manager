@@ -2,13 +2,8 @@
 
 require_once "utils.php";
 require_once "config.php";
-require_once "ImageUploader.php";
-
-// GDライブラリの確認
-if (!function_exists("imagecreatetruecolor")) {
-    echo "GD not installed!";
-    exit;
-}
+require_once "ImageValidator.class.php";
+require_once "ImageUploader.class.php";
 
 $uploader = new \MyApp\ImageUploader();
 
@@ -55,7 +50,7 @@ while (false !== ($file = readdir($images_dirs))) {
     }
     $files[] = $file;
     // ドロップダウン用の配列を作成
-    if (SWITCH_SELECT_DIRS) {
+    if (IS_SELECT_DIRS) {
         $select_dir_list[] = $file;
     } else {
         $ym_list[$file] = date("Y年m月", strtotime($file));

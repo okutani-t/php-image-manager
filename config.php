@@ -12,7 +12,7 @@ debugMode(true);
 /**
  * 格納するディレクトリを直接指定したい場合true
  */
-define("SWITCH_SELECT_DIRS", false);
+define("IS_SELECT_DIRS", false);
 
 /**
  * アップロードできるファイル容量の上限
@@ -41,7 +41,7 @@ define("IMAGES_DIR_YM_NOW", __DIR__ . "/images/" . date("Y-m", time()));
  * あらかじめディレクトリを作成しておく
  * "images以下にあるディレクトリ名" => "ディレクトリにつけたい別名", で記述
  */
-if (SWITCH_SELECT_DIRS) {
+if (IS_SELECT_DIRS) {
     $img_dir_paths = array(
         "mydir" => "私専用の画像",
         "other" => "他の人の画像"
@@ -56,7 +56,7 @@ if (SWITCH_SELECT_DIRS) {
  * GETの値が無い・一致しない＆ディレクトリが存在しない場合、最新年月の画像パスを表示
  * 画像がimagesに一枚もなければimagesまでのディレクトリを定義
  */
-if (SWITCH_SELECT_DIRS) {
+if (IS_SELECT_DIRS) {
     if (isset($_GET["select_dir"]) &&
         array_key_exists($_GET["select_dir"], $img_dir_paths)) { // 直接ディレクトリ指定の場合
         $current_images_dir = __DIR__ . "/images/" . $_GET["select_dir"];

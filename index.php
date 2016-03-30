@@ -52,7 +52,7 @@
             <!-- select box -->
             <form id="ym_select" action="" method="get">
                 <div class="input-field col m3 s12">
-                    <?php if(SWITCH_SELECT_DIRS) : ?>
+                    <?php if(IS_SELECT_DIRS) : ?>
                         <select name="select_dir">
                             <?php foreach ($img_dir_paths as $key => $value) : ?>
                                 <option value="<?php echo $key ?>" <?php if (basename(CURRENT_IMAGES_DIR) === $key) {
