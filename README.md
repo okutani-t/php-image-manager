@@ -1,5 +1,7 @@
 # IMAGE UPLOADER
 
+[![Build Status](https://travis-ci.org/okutani-t/php-image-manager.svg?branch=master)](https://travis-ci.org/okutani-t/php-image-manager)
+
 PHPで使える画像アップローダー
 
 ## Install

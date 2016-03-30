@@ -1,0 +1,7 @@
+language: php
+
+before_install:
+  - /home/travis/.phpenv/versions/5.6/bin/composer self-update
+
+php:
+    - 5.6
