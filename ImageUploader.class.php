@@ -30,8 +30,7 @@ class ImageUploader {
                 // exit;
             // trueなら拡張子、falseならエラーメッセージが返る
             if (!$is_valid) {
-                $error = $extOrError;
-                throw new \Exception($error);
+                throw new \Exception($extOrError);
             } else {
                 $ext = $extOrError;
             }
