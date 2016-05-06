@@ -45,7 +45,7 @@ while (false !== ($file = readdir($images_dirs))) {
         continue;
     }
     // ディレクトリが空なら削除
-    if (count(glob(__DIR__ . "/images/" . $file . "/*")) == 0) {
+    if (!IS_SELECT_DIRS && count(glob(__DIR__ . "/images/" . $file . "/*")) == 0) {
         rmdir(__DIR__ . "/images/" . $file);
     }
     $files[] = $file;
